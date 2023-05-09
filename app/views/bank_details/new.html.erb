@@ -1,0 +1,33 @@
+<%= form_with model: @detail, url: user_bank_details_path do |form| %>
+  <div class="container ">
+    <h1 class="text-center">Add Card</h1>
+    <%= link_to "back", user_bank_details_path %>
+    <div class="row">  
+      <div class="col-4">
+        <%= form.label :credit_card_number %><br>
+        <%= form.text_field :credit_card_number, class: "form-control" %>
+        <%= custom_error(@detail, :credit_card_number) %>
+      </div>
+    </div><br/>
+
+    <div class="row">
+      <div class="col-4">
+        <%= form.label :cvv_number %><br>
+        <%= form.password_field :cvv_number, class: "form-control" %>
+        <%= custom_error(@detail, :cvv_number) %>
+      </div>
+    </div> <br/>
+
+    <div class="row">
+      <div class="col-4">
+        <%= form.label :password %><br>
+        <%= form.password_field :password, class: "form-control" %>
+        <%= custom_error(@detail, :password) %>
+      </div>
+    </div> <br/>
+
+    <div>
+      <%= form.submit "Insert data", class: "btn btn-primary -center" %>
+    </div>    
+  </div>
+<% end %>

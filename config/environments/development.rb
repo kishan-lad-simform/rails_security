@@ -11,8 +11,13 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  # config.force_ssl = false
+
   # Show full error reports.
   config.consider_all_requests_local = true
+
+  config.session_store :cookie_store, expire_after: 2.minutes
+  #It will expire our session aftre 2 minutes when we logged in.
 
   # Enable server timing
   config.server_timing = true

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_holder_name: MyString
+  cvv_number: MyString
+  credit_card_number: MyString
+  password_digest: MyString
+
+two:
+  account_holder_name: MyString
+  cvv_number: MyString
+  credit_card_number: MyString
+  password_digest: MyString
