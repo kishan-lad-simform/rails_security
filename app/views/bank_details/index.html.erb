@@ -17,7 +17,7 @@
           <% @details.each do |data| %>
             <tr>
               <td> <%= data.id %> </td>
-              <td> <%= data.credit_card_number %> </td>
+              <td> <%= data.credit_card_number.gsub(/^(\d{8})/, '*' * 8) %> </td>
               <td> <%= link_to "Delete Card", user_bank_detail_path(@current_user, data.id), 
                       data: { turbo_method: :delete } %>
               </td>
