@@ -1,0 +1,30 @@
+<div class="container text-center">
+  <div class="row justify-content-md-center">
+    <h2> List of Cards </h2>
+    <%= link_to "back", users_path %> <br>
+    <%= link_to "Add_card", new_user_bank_detail_path(@current_user.id)  %>
+    <div class="col">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"> Id </th>
+            <th scope="col"> Credit Card Number </th>  
+            <th scope="col"> Action </th>     
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @details.each do |data| %>
+            <tr>
+              <td> <%= data.id %> </td>
+              <td> <%= data.credit_card_number.gsub(/^(\d{8})/, '*' * 8) %> </td>
+              <td> <%= link_to "Delete Card", user_bank_detail_path(@current_user, data.id), 
+                      data: { turbo_method: :delete } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

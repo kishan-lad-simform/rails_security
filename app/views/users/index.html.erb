@@ -1,0 +1,26 @@
+<div class="container text-center">
+  <div class="row justify-content-md-center">
+    <h2> User Dashboard </h2>
+    <%= link_to "Logout", logout_path %> <br>
+    <%= link_to "Bank Details", user_bank_details_path(@current_user.id) %>
+    <div class="col">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" > Id </th>
+            <th scope="col"> Name </th>
+            <th scope="col"> email </th>     
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td> <%= @user.id %> </td>
+            <td> <%= @user.name %> </td>
+            <td> <%= @user.email %> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
